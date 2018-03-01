@@ -5,8 +5,6 @@ public class Resume {
 
     private Integer uid;
 
-    private Integer resumeCode;
-
     private String username;
 
     private Integer age;
@@ -43,14 +41,6 @@ public class Resume {
 
     public void setUid(Integer uid) {
         this.uid = uid;
-    }
-
-    public Integer getResumeCode() {
-        return resumeCode;
-    }
-
-    public void setResumeCode(Integer resumeCode) {
-        this.resumeCode = resumeCode;
     }
 
     public String getUsername() {

@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="com.hust.ofornet.pojo.Resume">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
-    <result column="resumeCode" jdbcType="INTEGER" property="resumeCode" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
@@ -47,8 +46,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, uid, resumeCode, username, age, sex, skill, experience, degree, hometown, adress, 
-    job, project, award
+    id, uid, username, age, sex, skill, experience, degree, hometown, adress, job, project, 
+    award
   </sql>
   <select id="selectByExample" parameterType="com.hust.ofornet.pojo.ResumeExample" resultMap="BaseResultMap">
     select
@@ -76,13 +75,13 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hust.ofornet.pojo.Resume" useGeneratedKeys="true">
-    insert into resume (uid, resumeCode, username, 
-      age, sex, skill, experience, 
+    insert into resume (uid, username, age, 
+      sex, skill, experience, 
       degree, hometown, adress, 
       job, project, award
       )
-    values (#{uid,jdbcType=INTEGER}, #{resumeCode,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
-      #{age,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, #{skill,jdbcType=VARCHAR}, #{experience,jdbcType=VARCHAR}, 
+    values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{sex,jdbcType=VARCHAR}, #{skill,jdbcType=VARCHAR}, #{experience,jdbcType=VARCHAR}, 
       #{degree,jdbcType=VARCHAR}, #{hometown,jdbcType=VARCHAR}, #{adress,jdbcType=VARCHAR}, 
       #{job,jdbcType=VARCHAR}, #{project,jdbcType=VARCHAR}, #{award,jdbcType=VARCHAR}
       )
@@ -92,9 +91,6 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="uid != null">
         uid,
-      </if>
-      <if test="resumeCode != null">
-        resumeCode,
       </if>
       <if test="username != null">
         username,
@@ -133,9 +129,6 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="uid != null">
         #{uid,jdbcType=INTEGER},
-      </if>
-      <if test="resumeCode != null">
-        #{resumeCode,jdbcType=INTEGER},
       </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
@@ -178,9 +171,6 @@
       <if test="uid != null">
         uid = #{uid,jdbcType=INTEGER},
       </if>
-      <if test="resumeCode != null">
-        resumeCode = #{resumeCode,jdbcType=INTEGER},
-      </if>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
       </if>
@@ -220,7 +210,6 @@
   <update id="updateByPrimaryKey" parameterType="com.hust.ofornet.pojo.Resume">
     update resume
     set uid = #{uid,jdbcType=INTEGER},
-      resumeCode = #{resumeCode,jdbcType=INTEGER},
       username = #{username,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},
       sex = #{sex,jdbcType=VARCHAR},

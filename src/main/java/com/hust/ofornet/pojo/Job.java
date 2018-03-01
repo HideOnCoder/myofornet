@@ -7,11 +7,11 @@ public class Job {
 
     private Integer cid;
 
+    private Integer coid;
+
     private String name;
 
     private String city;
-
-    private Integer company;
 
     private String nature;
 
@@ -43,6 +43,14 @@ public class Job {
         this.cid = cid;
     }
 
+    public Integer getCoid() {
+        return coid;
+    }
+
+    public void setCoid(Integer coid) {
+        this.coid = coid;
+    }
+
     public String getName() {
         return name;
     }
@@ -57,14 +65,6 @@ public class Job {
 
     public void setCity(String city) {
         this.city = city == null ? null : city.trim();
-    }
-
-    public Integer getCompany() {
-        return company;
-    }
-
-    public void setCompany(Integer company) {
-        this.company = company;
     }
 
     public String getNature() {

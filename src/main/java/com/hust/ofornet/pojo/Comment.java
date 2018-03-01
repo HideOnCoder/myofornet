@@ -5,13 +5,13 @@ import java.util.Date;
 public class Comment {
     private Integer id;
 
-    private String content;
+    private Integer qid;
 
     private Integer uid;
 
-    private String usename;
+    private String content;
 
-    private Integer jobid;
+    private String usename;
 
     private Date createDate;
 
@@ -23,12 +23,12 @@ public class Comment {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public Integer getQid() {
+        return qid;
     }
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+    public void setQid(Integer qid) {
+        this.qid = qid;
     }
 
     public Integer getUid() {
@@ -39,20 +39,20 @@ public class Comment {
         this.uid = uid;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
+
     public String getUsename() {
         return usename;
     }
 
     public void setUsename(String usename) {
         this.usename = usename == null ? null : usename.trim();
-    }
-
-    public Integer getJobid() {
-        return jobid;
-    }
-
-    public void setJobid(Integer jobid) {
-        this.jobid = jobid;
     }
 
     public Date getCreateDate() {
