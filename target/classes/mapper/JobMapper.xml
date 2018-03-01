@@ -4,9 +4,9 @@
   <resultMap id="BaseResultMap" type="com.hust.ofornet.pojo.Job">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="coid" jdbcType="INTEGER" property="coid" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="city" jdbcType="VARCHAR" property="city" />
-    <result column="company" jdbcType="INTEGER" property="company" />
     <result column="nature" jdbcType="VARCHAR" property="nature" />
     <result column="experience" jdbcType="VARCHAR" property="experience" />
     <result column="education" jdbcType="VARCHAR" property="education" />
@@ -45,8 +45,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, cid, name, city, company, nature, experience, education, salary, createDate, 
-    collecttime, description
+    id, cid, coid, name, city, nature, experience, education, salary, createDate, collecttime, 
+    description
   </sql>
   <select id="selectByExample" parameterType="com.hust.ofornet.pojo.JobExample" resultMap="BaseResultMap">
     select
@@ -74,12 +74,12 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hust.ofornet.pojo.Job" useGeneratedKeys="true">
-    insert into job (cid, name, city, 
-      company, nature, experience, 
+    insert into job (cid, coid, name, 
+      city, nature, experience, 
       education, salary, createDate, 
       collecttime, description)
-    values (#{cid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
-      #{company,jdbcType=INTEGER}, #{nature,jdbcType=VARCHAR}, #{experience,jdbcType=VARCHAR}, 
+    values (#{cid,jdbcType=INTEGER}, #{coid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{nature,jdbcType=VARCHAR}, #{experience,jdbcType=VARCHAR}, 
       #{education,jdbcType=VARCHAR}, #{salary,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
       #{collecttime,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR})
   </insert>
@@ -89,14 +89,14 @@
       <if test="cid != null">
         cid,
       </if>
+      <if test="coid != null">
+        coid,
+      </if>
       <if test="name != null">
         name,
       </if>
       <if test="city != null">
         city,
-      </if>
-      <if test="company != null">
-        company,
       </if>
       <if test="nature != null">
         nature,
@@ -124,14 +124,14 @@
       <if test="cid != null">
         #{cid,jdbcType=INTEGER},
       </if>
+      <if test="coid != null">
+        #{coid,jdbcType=INTEGER},
+      </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
       <if test="city != null">
         #{city,jdbcType=VARCHAR},
-      </if>
-      <if test="company != null">
-        #{company,jdbcType=INTEGER},
       </if>
       <if test="nature != null">
         #{nature,jdbcType=VARCHAR},
@@ -162,14 +162,14 @@
       <if test="cid != null">
         cid = #{cid,jdbcType=INTEGER},
       </if>
+      <if test="coid != null">
+        coid = #{coid,jdbcType=INTEGER},
+      </if>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="city != null">
         city = #{city,jdbcType=VARCHAR},
-      </if>
-      <if test="company != null">
-        company = #{company,jdbcType=INTEGER},
       </if>
       <if test="nature != null">
         nature = #{nature,jdbcType=VARCHAR},
@@ -198,9 +198,9 @@
   <update id="updateByPrimaryKey" parameterType="com.hust.ofornet.pojo.Job">
     update job
     set cid = #{cid,jdbcType=INTEGER},
+      coid = #{coid,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
-      company = #{company,jdbcType=INTEGER},
       nature = #{nature,jdbcType=VARCHAR},
       experience = #{experience,jdbcType=VARCHAR},
       education = #{education,jdbcType=VARCHAR},

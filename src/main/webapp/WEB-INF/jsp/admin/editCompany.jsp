@@ -10,10 +10,17 @@
 <script>
     $(function(){
  
-        $("#editForm").submit(function(){
-            if(!checkEmpty("name","分类名称"))
+    	$("#addForm").submit(function(){
+            if(!checkEmpty("name","公司名称"))
                 return false;
- 
+            if(!checkEmpty("username","用户名"))
+                return false;
+            if(!checkEmpty("password","密码"))
+                return false;
+            if(!checkEmpty("city","城市"))
+                return false;
+            if(!checkEmpty("companyPic","Logo图片"))
+                return false;
             return true;
         });
     });
@@ -23,12 +30,12 @@
 <div class="workingArea">
  
     <ol class="breadcrumb">
-        <li><a href="admin_category_list">所有分类</a></li>
-        <li class="active">编辑分类</li>
+        <li><a href="admin_company_list">所有公司</a></li>
+        <li class="active">编辑公司</li>
     </ol>
  
     <div class="panel panel-warning editDiv">
-        <div class="panel-heading">编辑分类</div>
+        <div class="panel-heading">编辑公司</div>
         <div class="panel-body">
             <form method="post" id="editForm" action="admin_company_update"  enctype="multipart/form-data">
                 <table class="editTable">

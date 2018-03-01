@@ -224,66 +224,6 @@ public class ResumeExample {
             return (Criteria) this;
         }
 
-        public Criteria andResumeCodeIsNull() {
-            addCriterion("resumeCode is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeIsNotNull() {
-            addCriterion("resumeCode is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeEqualTo(Integer value) {
-            addCriterion("resumeCode =", value, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeNotEqualTo(Integer value) {
-            addCriterion("resumeCode <>", value, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeGreaterThan(Integer value) {
-            addCriterion("resumeCode >", value, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("resumeCode >=", value, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeLessThan(Integer value) {
-            addCriterion("resumeCode <", value, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeLessThanOrEqualTo(Integer value) {
-            addCriterion("resumeCode <=", value, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeIn(List<Integer> values) {
-            addCriterion("resumeCode in", values, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeNotIn(List<Integer> values) {
-            addCriterion("resumeCode not in", values, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeBetween(Integer value1, Integer value2) {
-            addCriterion("resumeCode between", value1, value2, "resumeCode");
-            return (Criteria) this;
-        }
-
-        public Criteria andResumeCodeNotBetween(Integer value1, Integer value2) {
-            addCriterion("resumeCode not between", value1, value2, "resumeCode");
-            return (Criteria) this;
-        }
-
         public Criteria andUsernameIsNull() {
             addCriterion("username is null");
             return (Criteria) this;
